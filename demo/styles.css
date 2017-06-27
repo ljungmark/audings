@@ -1,0 +1,97 @@
+body {
+  background: radial-gradient(ellipse farthest-corner at center top, #64d2f3 0%, #21272c 100%);
+  font-family: 'Roboto Slab', serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+body::before {
+  background: url(pattern.png);
+  bottom: 0;
+  opacity: 0.3;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+body::after {
+    background:
+      url(clouds.png) center 20% no-repeat,
+      url(grass.png) bottom center repeat-x,
+      url(sweden.png) 5% bottom no-repeat;
+    bottom: 0;
+    content: '';
+    filter: grayscale(10%);
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.background {
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0.3;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: -100;
+}
+
+.keys {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.-key {
+  background: rgba(0, 0, 0, 0.3);
+  border: 3px solid #d5dbdd;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 rgba(46,86,153,.15), inset 0 1px 0 0 rgba(46,86,153,.1), inset 0 -1px 0 0 rgba(46,86,153,.4);
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 10px;
+  outline: 0;
+  padding: 14px 28px 12px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  text-align: center;
+  transition: all .07s;
+}
+
+.-key:hover {
+  background: rgba(5, 8, 10, 0.5);
+  cursor: pointer;
+}
+
+._playing {
+  background: rgba(5, 8, 10, 0.5);
+  border-color: #ffffff;
+  transform: scale(1.04);
+}
+
+.-value {
+  display: block;
+  font-size: 40px;
+}
+
+.-hotkey {
+  color: #d5dbdd;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
